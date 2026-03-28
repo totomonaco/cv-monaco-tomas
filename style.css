@@ -1,3 +1,4 @@
+/* --- VARIABLES Y CONFIGURACIÓN BASE --- */
 :root {
     --primary: #2563eb;
     --dark: #1e293b;
@@ -12,6 +13,7 @@ body {
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     margin: 0; 
+    overflow-x: hidden; /* Evita scroll horizontal molesto */
 }
 
 @keyframes gradientBG {
@@ -20,38 +22,87 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-.navbar { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; padding: 1rem 0; }
-.nav-container { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; padding: 0 1rem; align-items: center; }
+/* --- NAVEGACIÓN --- */
+.navbar { 
+    background: white; 
+    border-bottom: 1px solid #e2e8f0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+    padding: 1rem 0; 
+}
+
+.nav-container { 
+    max-width: 900px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0 1rem; 
+    align-items: center; 
+}
+
 .logo { font-weight: 800; color: var(--dark); font-size: 1.2rem; }
 .dot { color: var(--primary); }
-.menu { display: flex; gap: 1rem; }
-.nav-link { text-decoration: none; color: var(--text); font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+
+.menu { 
+    display: flex; 
+    align-items: center; 
+    gap: 1.2rem; 
+}
+
+.nav-link { 
+    text-decoration: none; 
+    color: var(--text); 
+    font-size: 0.9rem; 
+    font-weight: 600; 
+    cursor: pointer; 
+    transition: color 0.3s;
+}
+
 .nav-link.active { color: var(--primary); }
 
-.tab-content { display: none; max-width: 900px; margin: 3rem auto; padding: 0 1rem; animation: fadeIn 0.3s; }
-.tab-content.active { display: block; }
+.nav-btn-download {
+    text-decoration: none;
+    background-color: var(--primary);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.nav-btn-download:hover { background-color: var(--dark); }
 
-/* --- HERO CORREGIDO PARA FOTOS GRANDES --- */
+/* --- CONTENIDO Y ANIMACIONES --- */
+.tab-content { 
+    display: none; 
+    max-width: 900px; 
+    margin: 3rem auto; 
+    padding: 0 1rem; 
+}
+
+.tab-content.active {
+    display: block;
+    animation: aparecerSuave 0.8s ease forwards;
+}
+
+@keyframes aparecerSuave {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- HERO SECTION --- */
 .hero-grid { 
     display: flex; 
     align-items: center; 
     gap: 3rem; 
-    flex-wrap: wrap; /* Por si se ve en celular, que la foto baje */
+    flex-wrap: wrap;
 }
 
-.hero-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.hero-img {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    min-width: 300px;
-}
+.hero-text { flex: 1; min-width: 300px; }
+.hero-img { flex: 1; display: flex; justify-content: center; min-width: 300px; }
 
 h1 { 
     font-size: 3.5rem; 
@@ -82,11 +133,9 @@ h1 {
     height: 450px; 
     object-fit: cover; 
     border-radius: 30px; 
-    /* Efecto de borde de cristal */
     border: 8px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
-    /* Animación de flotado */
     animation: float 6s ease-in-out infinite;
     transition: all 0.4s ease;
 }
@@ -98,91 +147,118 @@ h1 {
 }
 
 .profile-pic:hover {
-    transform: scale(1.05) rotate(2deg); /* Se agranda y gira penitas */
+    transform: scale(1.05) rotate(2deg);
+    filter: brightness(1.1);
     box-shadow: 0 30px 60px rgba(37, 99, 235, 0.2);
 }
-/* ----------------------------------------- */
 
-/* Cards generales */
-.card, .project-card, .contact-box { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); margin-bottom: 1rem; }
+/* --- CARDS Y GRIDS --- */
+.card, .project-card, .contact-box { 
+    background: white; 
+    padding: 2rem; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
+    margin-bottom: 1rem; 
+}
 
-/* Grid de Portafolio */
-.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.tag { background: #dbeafe; color: var(--primary); font-size: 0.7rem; padding: 4px 8px; border-radius: 4px; font-weight: bold; margin-right: 5px; }
+.portfolio-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+}
 
-/* Formularios */
-.form-group { margin-bottom: 1rem; }
-.form-input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
-.btn-primary { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; }
-.btn-download { text-decoration: none; color: var(--text); font-size: 0.9rem; margin-left: 1rem; border-bottom: 1px solid; }
+.tag { 
+    background: #dbeafe; 
+    color: var(--primary); 
+    font-size: 0.7rem; 
+    padding: 4px 8px; 
+    border-radius: 4px; 
+    font-weight: bold; 
+    margin-right: 5px; 
+}
 
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-.skill-card { background: white; padding: 1.5rem; border-radius: 12px; text-align: center; }
+.skills-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 20px; 
+}
+
+.skill-card { 
+    background: white; 
+    padding: 1.5rem; 
+    border-radius: 12px; 
+    text-align: center; 
+    transition: transform 0.3s;
+}
+
+.skill-card:hover { transform: translateY(-5px); }
 .skill-card img { width: 50px; margin-bottom: 10px; }
-/* Estilo para el botón de descarga en el Navbar */
-.nav-btn-download {
-    text-decoration: none;
-    background-color: var(--primary); /* El azul que ya usas */
-    color: white !important; /* Forzamos que el texto sea blanco */
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    transition: background 0.3s ease;
-    margin-left: 10px; /* Separación de las otras etiquetas */
+
+/* --- FORMULARIOS Y BOTONES --- */
+.form-group { margin-bottom: 1.5rem; }
+.form-input { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #cbd5e1; 
+    border-radius: 8px; 
+    box-sizing: border-box; 
+    font-family: inherit;
 }
 
-.nav-btn-download:hover {
-    background-color: var(--dark); /* Cambia a gris oscuro al pasar el mouse */
-}
-
-/* Ajuste para que el menú sea flexible */
-.menu {
-    display: flex;
-    align-items: center; /* Centra verticalmente los links y el botón */
-    gap: 1.2rem;
-}
-
-/* Efecto al pasar el mouse (Hover) */
-.btn-primary {
-    padding: 15px 35px;
-    font-size: 1rem;
+.btn-primary { 
+    background: var(--primary); 
+    color: white; 
+    border: none; 
+    padding: 15px 35px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: bold; 
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px); /* Sube un poquito */
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4); /* Brilla un poco */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
 }
 
-/* Efecto al hacer clic (Active) */
-.btn-primary:active {
-    transform: scale(0.95); /* Se achica un 5% simulando presión */
-}
-.tab-content.active {
-    display: block;
-    animation: aparecerSuave 1s ease forwards;
-}
+.btn-primary:active { transform: scale(0.95); }
 
-@keyframes aparecerSuave {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* Viene desde abajo */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.profile-pic:hover {
-    filter: brightness(1.1); /* Se ilumina un poco */
-    transform: scale(1.02);  /* Se agranda apenas */
-    transition: all 0.3s ease;
-}
 .portfolio-action {
     display: flex;
     justify-content: center;
-    margin-top: 40px; /* Un buen espacio debajo de las tarjetas */
+    margin-top: 40px;
+}
+
+/* --- RESPONSIVE (CELULARES) --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; text-align: center; }
+    
+    .hero-grid { flex-direction: column; text-align: center; gap: 2rem; }
+    
+    .subtitle { border-left: none; border-top: 4px solid var(--primary); padding: 1rem 0 0 0; }
+    
+    .profile-pic { max-width: 280px; height: 320px; }
+
+    .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 10px 0;
+        justify-content: space-around;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        gap: 0;
+    }
+
+    .nav-btn-download { display: none; } /* Ocultamos el del navbar en celular para no amontonar */
+
+    .tab-content { margin: 1.5rem auto 5rem auto; } /* Espacio extra abajo por el menú fix */
+
+    .portfolio-grid, .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }

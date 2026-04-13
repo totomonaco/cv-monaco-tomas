@@ -262,3 +262,39 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+.skill-tag-blue {
+    background: #edf2f7;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.skill-tag-green {
+    background: #e0f2fe;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #0369a1;
+}
+
+
+.skills-extra-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+.section-title--sm {
+    margin-top: 50px;
+    font-size: 1.5rem;
+}
+
+.section-title--mt {
+    margin-top: 40px;
+}

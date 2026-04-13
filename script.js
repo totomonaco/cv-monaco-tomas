@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.tab-content');
     const extraProjects = document.getElementById('extra-projects');
-    const btnVerMas = document.getElementById('btn-ver-mas');
+    const btnShowMore = document.getElementById('btn-ver-mas');
 
     // Función para cambiar de sección
-    function cambiarSeccion(targetId) {
+    function switchSection(targetId) {
         // Ocultar todo
         sections.forEach(s => s.classList.remove('active'));
         links.forEach(l => l.classList.remove('active'));
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Si entramos a cualquier sección, reseteamos los proyectos extra
         if (extraProjects && btnVerMas) {
             extraProjects.style.display = 'none';
-            btnVerMas.style.display = 'block'; // Volvemos a mostrar el botón
+            btnShowMore.style.display = 'block'; // Volvemos a mostrar el botón
         }
     }
 
@@ -30,22 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (link) {
             e.preventDefault();
             const targetId = link.getAttribute('data-target');
-            cambiarSeccion(targetId);
+            switchSection(targetId);
         }
     });
 
     // Lógica del botón Ver Más
-    if (btnVerMas) {
-        btnVerMas.addEventListener('click', function() {
+    if (btnShowMore) {
+        btnShowMore.addEventListener('click', function() {
             extraProjects.style.display = 'grid';
             this.style.display = 'none';
         });
     }
 
     // Botón de enviar formulario
-    const btnEnviar = document.getElementById('btnEnviar');
-    if (btnEnviar) {
-        btnEnviar.addEventListener('click', () => {
+    const btnSend = document.getElementById('btnSend');
+    if (btnSend) {
+        btnSend.addEventListener('click', () => {
             alert('¡Gracias! Tu mensaje ha sido enviado correctamente.');
         });
     }

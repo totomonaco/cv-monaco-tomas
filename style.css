@@ -127,15 +127,15 @@ h1 {
     margin-bottom: 2rem;
 }
 
-.profile-pic { 
-    width: 100%; 
-    max-width: 400px; 
-    height: 450px; 
-    object-fit: cover; 
-    border-radius: 30px; 
-    border: 8px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+.profile-pic {
+    width: 100%;
+    max-width: 25rem;
+    height: 28.125rem;
+    object-fit: cover;
+    border-radius: 1.875rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(0.625rem); 
+    box-shadow: 0 1.25rem 3.125rem rgba(0,0,0,0.1);
     animation: float 6s ease-in-out infinite;
     transition: all 0.4s ease;
 }

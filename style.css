@@ -1,15 +1,15 @@
 /* --- VARIABLES Y CONFIGURACIÓN BASE --- */
 :root {
-    --primary: #2563eb;
-    --dark: #1e293b;
-    --text: #475569;
-    --bg: #f8fafc;
+    --primary-color: #2563eb;
+    --dark-color: #1e293b;
+    --text-color: #475569;
+    --bg-color: #f8fafc;
 }
 
 body { 
     font-family: 'Inter', sans-serif; 
-    color: var(--text); 
-    background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #f1f5f9, #ffffff);
+    color: var(--text-color); 
+    background: linear-gradient(-45deg, var(--bg-color), #e2e8f0, #f1f5f9, #ffffff);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     margin: 0; 
@@ -41,8 +41,8 @@ body {
     align-items: center; 
 }
 
-.logo { font-weight: 800; color: var(--dark); font-size: 1.2rem; }
-.dot { color: var(--primary); }
+.logo { font-weight: 800; color: var(--dark-color); font-size: 1.2rem; }
+.dot { color: var(--primary-color); }
 
 .menu { 
     display: flex; 
@@ -59,11 +59,11 @@ body {
     transition: color 0.3s;
 }
 
-.nav-link.active { color: var(--primary); }
+.nav-link.active { color: var(--primary-color); }
 
 .nav-btn-download {
     text-decoration: none;
-    background-color: var(--primary);
+    background-color: var(--primary-color);
     color: white !important;
     padding: 8px 16px;
     border-radius: 6px;
@@ -73,7 +73,7 @@ body {
     margin-left: 10px;
 }
 
-.nav-btn-download:hover { background-color: var(--dark); }
+.nav-btn-download:hover { background-color: var(--dark-color); }
 
 /* --- CONTENIDO Y ANIMACIONES --- */
 .tab-content { 
@@ -113,7 +113,7 @@ h1 {
 }
 
 .highlight { 
-    background: linear-gradient(90deg, var(--primary), #6366f1);
+    background: linear-gradient(90deg, var(--primary-color), #6366f1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
@@ -122,7 +122,7 @@ h1 {
 .subtitle {
     font-size: 1.1rem;
     line-height: 1.6;
-    border-left: 4px solid var(--primary);
+    border-left: 4px solid var(--primary-color);
     padding-left: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -169,7 +169,7 @@ h1 {
 
 .tag { 
     background: #dbeafe; 
-    color: var(--primary); 
+    color: var(--primary-color); 
     font-size: 0.7rem; 
     padding: 4px 8px; 
     border-radius: 4px; 
@@ -206,7 +206,7 @@ h1 {
 }
 
 .btn-primary { 
-    background: var(--primary); 
+    background: var(--primary-color); 
     color: white; 
     border: none; 
     padding: 15px 35px; 
@@ -238,7 +238,7 @@ h1 {
     
     .hero-grid { flex-direction: column; text-align: center; gap: 2rem; }
     
-    .subtitle { border-left: none; border-top: 4px solid var(--primary); padding: 1rem 0 0 0; }
+    .subtitle { border-left: none; border-top: 4px solid var(--primary-color); padding: 1rem 0 0 0; }
     
     .profile-pic { max-width: 280px; height: 320px; }
 

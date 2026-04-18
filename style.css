@@ -198,6 +198,30 @@ h1 {
     transition: transform 0.3s;
 }
 
+.skill-tag-blue {
+    background: #edf2f7;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.skill-tag-lightblue {
+    background: #e0f2fe;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #0369a1;
+}
+
+.skill-tag-green {
+    background: #e0f2fe;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #08a103;
+}
+
 .skill-card:hover { transform: translateY(-5px); }
 .skill-card img { width: 50px; margin-bottom: 10px; }
 

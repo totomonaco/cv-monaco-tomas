@@ -25,7 +25,7 @@ body {
 /* --- NAVEGACIÓN --- */
 .navbar { 
     background: white; 
-    border-bottom: 1px solid #e2e8f0; 
+    border-bottom: 0.063rem solid #e2e8f0; 
     position: sticky; 
     top: 0; 
     z-index: 100; 
@@ -33,7 +33,7 @@ body {
 }
 
 .nav-container { 
-    max-width: 900px; 
+    max-width: 56.25rem; 
     margin: 0 auto; 
     display: flex; 
     justify-content: space-between; 
@@ -65,12 +65,12 @@ body {
     text-decoration: none;
     background-color: var(--primary);
     color: white !important;
-    padding: 8px 16px;
-    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
     font-size: 0.85rem;
     font-weight: 700;
     transition: all 0.3s ease;
-    margin-left: 10px;
+    margin-left: 0.625rem;
 }
 
 .nav-btn-download:hover { background-color: var(--dark); }
@@ -78,7 +78,7 @@ body {
 /* --- CONTENIDO Y ANIMACIONES --- */
 .tab-content { 
     display: none; 
-    max-width: 900px; 
+    max-width: 56.25rem; 
     margin: 3rem auto; 
     padding: 0 1rem; 
 }
@@ -101,15 +101,15 @@ body {
     flex-wrap: wrap;
 }
 
-.hero-text { flex: 1; min-width: 300px; }
-.hero-img { flex: 1; display: flex; justify-content: center; min-width: 300px; }
+.hero-text { flex: 1; min-width: 18.75rem; }
+.hero-img { flex: 1; display: flex; justify-content: center; min-width: 18.75rem; }
 
 h1 { 
     font-size: 3.5rem; 
     color: var(--dark); 
     line-height: 1; 
     margin-bottom: 1.5rem; 
-    letter-spacing: -1px;
+    letter-spacing: -0.063rem;
 }
 
 .highlight { 
@@ -122,85 +122,85 @@ h1 {
 .subtitle {
     font-size: 1.1rem;
     line-height: 1.6;
-    border-left: 4px solid var(--primary);
+    border-left: 0.25rem solid var(--primary);
     padding-left: 1.5rem;
     margin-bottom: 2rem;
 }
 
 .profile-pic { 
     width: 100%; 
-    max-width: 400px; 
-    height: 450px; 
+    max-width: 25rem; 
+    height: 28.125rem; 
     object-fit: cover; 
-    border-radius: 30px; 
-    border: 8px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1); 
+    border-radius: 1.875rem; 
+    border: 0.5rem solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(0.625rem);
+    box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,0.1); 
     animation: float 6s ease-in-out infinite;
     transition: all 0.4s ease;
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+    0% { transform: translateY(0rem); }
+    50% { transform: translateY(-1.25rem); }
+    100% { transform: translateY(0rem); }
 }
 
 .profile-pic:hover {
     transform: scale(1.05) rotate(2deg);
     filter: brightness(1.1);
-    box-shadow: 0 30px 60px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 1.875rem 3.75rem rgba(37, 99, 235, 0.2);
 }
 
 /* --- CARDS Y GRIDS --- */
 .card, .project-card, .contact-box { 
     background: white; 
     padding: 2rem; 
-    border-radius: 12px; 
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
+    border-radius: 0.75rem; 
+    box-shadow: 0 0.25rem 0.375rem -0.063rem rgba(0,0,0,0.05); 
     margin-bottom: 1rem; 
 }
 
 .portfolio-grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 20px; 
+    grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr)); 
+    gap: 1.25rem; 
 }
 
 .tag { 
     background: #dbeafe; 
     color: var(--primary); 
     font-size: 0.7rem; 
-    padding: 4px 8px; 
-    border-radius: 4px; 
+    padding: 0.25rem 0.5rem; 
+    border-radius: 0.25rem; 
     font-weight: bold; 
-    margin-right: 5px; 
+    margin-right: 0.313rem; 
 }
 
 .skills-grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-    gap: 20px; 
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr)); 
+    gap: 1.25rem; 
 }
 
 .skill-card { 
     background: white; 
     padding: 1.5rem; 
-    border-radius: 12px; 
+    border-radius: 0.75rem; 
     text-align: center; 
     transition: transform 0.3s;
 }
 
-.skill-card:hover { transform: translateY(-5px); }
-.skill-card img { width: 50px; margin-bottom: 10px; }
+.skill-card:hover { transform: translateY(-0.313rem); }
+.skill-card img { width: 3.125rem; margin-bottom: 0.625rem; }
 
 /* --- FORMULARIOS Y BOTONES --- */
 .form-group { margin-bottom: 1.5rem; }
 .form-input { 
     width: 100%; 
-    padding: 12px; 
-    border: 1px solid #cbd5e1; 
-    border-radius: 8px; 
+    padding: 0.75rem; 
+    border: 0.063rem solid #cbd5e1; 
+    border-radius: 0.5rem; 
     box-sizing: border-box; 
     font-family: inherit;
 }
@@ -209,19 +209,19 @@ h1 {
     background: var(--primary); 
     color: white; 
     border: none; 
-    padding: 15px 35px; 
-    border-radius: 8px; 
+    padding: 0.938rem 2.188rem; 
+    border-radius: 0.5rem; 
     cursor: pointer; 
     font-weight: bold; 
     text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    letter-spacing: 0.063rem;
+    box-shadow: 0 0.25rem 1.25rem rgba(37, 99, 235, 0.3);
     transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.375rem 1.25rem rgba(37, 99, 235, 0.4);
 }
 
 .btn-primary:active { transform: scale(0.95); }
@@ -229,7 +229,7 @@ h1 {
 .portfolio-action {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 2.5rem;
 }
 
 /* --- RESPONSIVE (CELULARES) --- */
@@ -238,9 +238,9 @@ h1 {
     
     .hero-grid { flex-direction: column; text-align: center; gap: 2rem; }
     
-    .subtitle { border-left: none; border-top: 4px solid var(--primary); padding: 1rem 0 0 0; }
+    .subtitle { border-left: none; border-top: 0.25rem solid var(--primary); padding: 1rem 0 0 0; }
     
-    .profile-pic { max-width: 280px; height: 320px; }
+    .profile-pic { max-width: 17.5rem; height: 320px; }
 
     .menu {
         position: fixed;
@@ -248,9 +248,9 @@ h1 {
         left: 0;
         width: 100%;
         background: white;
-        padding: 10px 0;
+        padding: 0.625rem 0;
         justify-content: space-around;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 -0.125rem 0.625rem rgba(0,0,0,0.1);
         gap: 0;
     }
 

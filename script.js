@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const menuLink = document.querySelector(`.menu .nav-link[data-target="${targetId}"]`);
         if (menuLink) menuLink.classList.add('active');
 
-        // --- AQUÍ VA EL RESET ---
         // Si entramos a cualquier sección, reseteamos los proyectos extra
         if (extraProjects && btnVerMas) {
             extraProjects.style.display = 'none';

@@ -114,6 +114,7 @@ h1 {
 
 .highlight { 
     background: linear-gradient(90deg, var(--primary), #6366f1);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;

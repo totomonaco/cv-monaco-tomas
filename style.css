@@ -1,15 +1,22 @@
 /* --- VARIABLES Y CONFIGURACIÓN BASE --- */
 :root {
-    --primary: #2563eb;
-    --dark: #1e293b;
-    --text: #475569;
-    --bg: #f8fafc;
+    --primary-color: #2563eb;
+    --dark-color: #1e293b;
+    --text-color: #475569;
+    --bg-color: #f8fafc;
+}
+
+@font-face {
+font-family: 'Inter';
+    src: url('/fonts/Inter-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
 
 body { 
     font-family: 'Inter', sans-serif; 
-    color: var(--text); 
-    background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #f1f5f9, #ffffff);
+    color: var(--text-color); 
+    background: linear-gradient(-45deg, var(--bg-color), #e2e8f0, #f1f5f9, #ffffff);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     margin: 0; 
@@ -41,8 +48,8 @@ body {
     align-items: center; 
 }
 
-.logo { font-weight: 800; color: var(--dark); font-size: 1.2rem; }
-.dot { color: var(--primary); }
+.logo { font-weight: 800; color: var(--dark-color); font-size: 1.2rem; }
+.dot { color: var(--primary-color); }
 
 .menu { 
     display: flex; 
@@ -59,11 +66,11 @@ body {
     transition: color 0.3s;
 }
 
-.nav-link.active { color: var(--primary); }
+.nav-link.active { color: var(--primary-color); }
 
 .nav-btn-download {
     text-decoration: none;
-    background-color: var(--primary);
+    background-color: var(--primary-color);
     color: white !important;
     padding: 0.5rem 1rem;
     border-radius: 0.375rem;
@@ -73,7 +80,7 @@ body {
     margin-left: 0.625rem;
 }
 
-.nav-btn-download:hover { background-color: var(--dark); }
+.nav-btn-download:hover { background-color: var(--dark-color); }
 
 /* --- CONTENIDO Y ANIMACIONES --- */
 .tab-content { 
@@ -113,8 +120,7 @@ h1 {
 }
 
 .highlight { 
-    background: linear-gradient(90deg, var(--primary), #6366f1);
-    background-clip: text;
+    background: linear-gradient(90deg, var(--primary-color), #6366f1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
@@ -123,7 +129,7 @@ h1 {
 .subtitle {
     font-size: 1.1rem;
     line-height: 1.6;
-    border-left: 0.25rem solid var(--primary);
+    border-left: 0.25rem solid var(--primary-color);
     padding-left: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -170,7 +176,7 @@ h1 {
 
 .tag { 
     background: #dbeafe; 
-    color: var(--primary); 
+    color: var(--primary-color); 
     font-size: 0.7rem; 
     padding: 0.25rem 0.5rem; 
     border-radius: 0.25rem; 
@@ -192,7 +198,31 @@ h1 {
     transition: transform 0.3s;
 }
 
-.skill-card:hover { transform: translateY(-0.313rem); }
+.skill-tag-blue {
+    background: #edf2f7;
+    padding: 0.625rem 1.25rem;
+    border-radius: 3.125rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.skill-tag-lightblue {
+    background: #e0f2fe;
+    padding: 0.625rem 1.25rem;
+    border-radius: 3.125rem;
+    font-weight: 600;
+    color: #0369a1;
+}
+
+.skill-tag-green {
+    background: #e0f2fe;
+    padding: 0.625rem 1.25rem;
+    border-radius: 3.125rem;
+    font-weight: 600;
+    color: #08a103;
+}
+
+.skill-card:hover { transform: translateY(-5px); }
 .skill-card img { width: 3.125rem; margin-bottom: 0.625rem; }
 
 /* --- FORMULARIOS Y BOTONES --- */
@@ -207,7 +237,7 @@ h1 {
 }
 
 .btn-primary { 
-    background: var(--primary); 
+    background: var(--primary-color); 
     color: white; 
     border: none; 
     padding: 0.938rem 2.188rem; 
@@ -239,9 +269,9 @@ h1 {
     
     .hero-grid { flex-direction: column; text-align: center; gap: 2rem; }
     
-    .subtitle { border-left: none; border-top: 0.25rem solid var(--primary); padding: 1rem 0 0 0; }
+    .subtitle { border-left: none; border-top: 0.25rem solid var(--primary-color); padding: 1rem 0 0 0; }
     
-    .profile-pic { max-width: 17.5rem; height: 320px; }
+    .profile-pic { max-width: 17.5rem; height: 20rem; }
 
     .menu {
         position: fixed;

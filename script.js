@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.tab-content');
     const extraProjects = document.getElementById('extra-projects');
-    const btnVerMas = document.getElementById('btn-ver-mas');
+    const btnViewMore = document.getElementById('btn-view-more');
 
     // Función para cambiar de sección
-    function cambiarSeccion(targetId) {
+    function switchSection(targetId) {
         // Ocultar todo
         sections.forEach(s => s.classList.remove('active'));
         links.forEach(l => l.classList.remove('active'));
@@ -17,11 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const menuLink = document.querySelector(`.menu .nav-link[data-target="${targetId}"]`);
         if (menuLink) menuLink.classList.add('active');
 
-        // --- AQUÍ VA EL RESET ---
         // Si entramos a cualquier sección, reseteamos los proyectos extra
-        if (extraProjects && btnVerMas) {
+        if (extraProjects && btnViewMore) {
             extraProjects.style.display = 'none';
-            btnVerMas.style.display = 'block'; // Volvemos a mostrar el botón
+            btnViewMore.style.display = 'block'; // Volvemos a mostrar el botón
         }
     }
 
@@ -31,22 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (link) {
             e.preventDefault();
             const targetId = link.getAttribute('data-target');
-            cambiarSeccion(targetId);
+            switchSection(targetId);
         }
     });
 
     // Lógica del botón Ver Más
-    if (btnVerMas) {
-        btnVerMas.addEventListener('click', function() {
+    if (btnViewMore) {
+        btnViewMore.addEventListener('click', function() {
             extraProjects.style.display = 'grid';
             this.style.display = 'none';
         });
     }
 
     // Botón de enviar formulario
-    const btnEnviar = document.getElementById('btnEnviar');
-    if (btnEnviar) {
-        btnEnviar.addEventListener('click', () => {
+    const btnSend = document.getElementById('btnSend');
+    if (btnSend) {
+        btnSend.addEventListener('click', () => {
             alert('¡Gracias! Tu mensaje ha sido enviado correctamente.');
         });
     }
